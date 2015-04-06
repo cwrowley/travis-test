@@ -18,13 +18,14 @@ before_install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda install --yes python=$TRAVIS_PYTHON_VERSION conda-build pip coverage
-  - conda install numpy scipy matplotlib
-  #- conda config --add channels http://conda.binstar.org/cwrowley
+  #- conda install numpy scipy matplotlib
+  - conda config --add channels http://conda.binstar.org/cwrowley
   - conda info -a
 
 # Install packages
 install:
-  - pip install control
+  - conda install slycot
+  - conda install control
 
 # command to run tests
 script:
